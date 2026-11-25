@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <rect width="900" height="430" rx="12" fill="#0b0e14"/>
+  <rect width="900" height="36" rx="12" fill="#121722"/>
+  <rect y="24" width="900" height="12" fill="#121722"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="18" r="6" fill="#28c840"/>
+  <text x="450" y="23" text-anchor="middle" font-size="12" fill="#7c8699">rift diff — bin/sample-old → bin/sample-new</text>
+
+  <g font-size="13.5">
+    <text x="24" y="70" fill="#3fb8af">$ rift diff sample-old sample-new</text>
+    <text x="24" y="96" fill="#aeb6c4">sample-old</text>
+    <text x="48" y="116" fill="#aeb6c4">-&gt; sample-new</text>
+    <text x="24" y="142" fill="#7c8699">2030 functions compared  ·  modified 3  added 18  removed 1</text>
+    <text x="24" y="164" fill="#e8e6e1">rift <tspan fill="#ff3b5c" font-weight="bold">likely</tspan>  ·  3 flagged  ·  likely:1 possible:2 unlikely:21</text>
+
+    <text x="24" y="206" fill="#5f6a7d">BAND      SCORE  STATUS    FUNCTION          EVIDENCE</text>
+    <text x="24" y="230" fill="#ff3b5c">likely    61     modified  main.parseRecord  <tspan fill="#aeb6c4">adds an error/validation path (fmt.errorf); grew 160 bytes</tspan></text>
+    <text x="24" y="254" fill="#ffb347">possible  58     modified  main.parseAll     <tspan fill="#aeb6c4">adds an error/validation path (fmt.errorf); grew 144 bytes</tspan></text>
+    <text x="24" y="278" fill="#ffb347">possible  38     added     main.readHeader   <tspan fill="#aeb6c4">new function; builds an error/validation path (fmt.errorf)</tspan></text>
+    <text x="24" y="302" fill="#3fb8af">unlikely  20     added     fmt.errorf        <tspan fill="#5f6a7d">new function</tspan></text>
+    <text x="24" y="326" fill="#3fb8af">unlikely  20     added     slices.heapSort…  <tspan fill="#5f6a7d">new function</tspan></text>
+  </g>
+
+  <text x="24" y="372" font-size="12.5" fill="#7c8699">The two builds differ only in <tspan fill="#e8e6e1">main.parseRecord</tspan> / <tspan fill="#e8e6e1">parseAll</tspan> — the functions that gained a length check.</text>
+  <text x="24" y="392" font-size="12.5" fill="#7c8699">Rift surfaced exactly those three, out of 2030 compared, with no source and no disassembler.</text>
+  <rect x="24" y="404" width="9" height="15" fill="#3fb8af"/>
+</svg>

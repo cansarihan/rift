@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="-10%" r="80%">
+      <stop offset="0%" stop-color="#141b28"/>
+      <stop offset="60%" stop-color="#0b0e14"/>
+    </radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="980" height="560" fill="url(#bg)"/>
+
+  <!-- header -->
+  <rect width="980" height="56" fill="#0b0e14" opacity="0.8"/>
+  <line x1="0" y1="56" x2="980" y2="56" stroke="#1e2735"/>
+  <path d="M28 14 L22 30 L32 36 L20 46" transform="translate(4,0)" fill="none" stroke="#ff3b5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="54" y="34" font-size="20" font-weight="700" letter-spacing="3" fill="#e8e6e1">rift</text>
+  <text x="120" y="34" font-size="11" fill="#7c8699">patch-diff · silently shipped fixes</text>
+  <text x="640" y="27" font-size="11" fill="#7c8699"><tspan fill="#9aa4b4">old</tspan> sample-old</text>
+  <text x="640" y="43" font-size="11" fill="#7c8699"><tspan fill="#3fb8af">new</tspan> sample-new</text>
+  <rect x="878" y="16" width="78" height="26" rx="6" fill="none" stroke="#1e2735"/>
+  <text x="917" y="33" text-anchor="middle" font-size="11" fill="#e8e6e1">re-run</text>
+
+  <!-- stats strip -->
+  <g transform="translate(0,56)">
+    <rect width="980" height="52" fill="#0b0e14" opacity="0.4"/>
+    <line x1="0" y1="52" x2="980" y2="52" stroke="#1e2735"/>
+    <circle cx="28" cy="26" r="7" fill="#ff3b5c" filter="url(#glow)"/>
+    <text x="44" y="31" font-size="13" font-weight="700" letter-spacing="2" fill="#ff3b5c">LIKELY</text>
+    <g font-size="11" fill="#7c8699">
+      <text x="150" y="20" font-size="17" fill="#e8e6e1">2030</text><text x="150" y="38">compared</text>
+      <text x="250" y="20" font-size="17" fill="#e8e6e1">3</text><text x="250" y="38">modified</text>
+      <text x="330" y="20" font-size="17" fill="#e8e6e1">18</text><text x="330" y="38">added</text>
+      <text x="410" y="20" font-size="17" fill="#e8e6e1">1</text><text x="410" y="38">removed</text>
+      <text x="490" y="20" font-size="17" fill="#ffb347">3</text><text x="490" y="38">flagged</text>
+    </g>
+    <rect x="770" y="24" width="180" height="3" rx="2" fill="#1e2735"/>
+    <rect x="770" y="24" width="180" height="3" rx="2" fill="#3fb8af"/>
+  </g>
+
+  <!-- fault line canvas -->
+  <g transform="translate(0,108)">
+    <rect width="600" height="452" fill="#0b0e14" opacity="0.2"/>
+    <polyline points="300,10 288,50 312,95 286,140 316,185 290,230 314,275 288,320 312,365 296,410 306,446"
+      fill="none" stroke="#7c8699" stroke-opacity="0.3" stroke-width="1.4"/>
+    <!-- flagged rifts -->
+    <g stroke-linecap="round">
+      <path d="M300,95 L360,88 L392,95" fill="none" stroke="#ff3b5c" stroke-opacity="0.6"/>
+      <circle cx="392" cy="95" r="14" fill="#ff3b5c" opacity="0.14"/>
+      <circle cx="392" cy="95" r="5.5" fill="#ff3b5c" filter="url(#glow)"/>
+      <text x="404" y="92" font-size="10.5" fill="#e8e6e1">main.parseRecord</text>
+      <text x="404" y="106" font-size="9" fill="#7c8699">61 · error/validation path</text>
+
+      <path d="M292,210 L224,202 L196,210" fill="none" stroke="#ffb347" stroke-opacity="0.6"/>
+      <circle cx="196" cy="210" r="12" fill="#ffb347" opacity="0.14"/>
+      <circle cx="196" cy="210" r="5" fill="#ffb347" filter="url(#glow)"/>
+      <text x="186" y="188" text-anchor="end" font-size="10.5" fill="#e8e6e1">main.parseAll</text>
+      <text x="186" y="202" text-anchor="end" font-size="9" fill="#7c8699">58 · error/validation path</text>
+
+      <path d="M308,300 L372,292 L404,300" fill="none" stroke="#ffb347" stroke-opacity="0.6"/>
+      <circle cx="404" cy="300" r="10" fill="#ffb347" opacity="0.12"/>
+      <circle cx="404" cy="300" r="4.5" fill="#ffb347"/>
+      <text x="416" y="297" font-size="10.5" fill="#e8e6e1">main.readHeader</text>
+      <text x="416" y="311" font-size="9" fill="#7c8699">38 · new validation helper</text>
+    </g>
+    <!-- dim noise nodes -->
+    <g fill="#3fb8af" opacity="0.5">
+      <circle cx="250" cy="55" r="2.6"/><circle cx="356" cy="150" r="2.6"/><circle cx="236" cy="258" r="2.6"/>
+      <circle cx="360" cy="340" r="2.6"/><circle cx="250" cy="388" r="2.6"/><circle cx="342" cy="420" r="2.6"/>
+      <circle cx="238" cy="120" r="2.6"/><circle cx="360" cy="240" r="2.6"/>
+    </g>
+    <g font-size="10.5" fill="#7c8699">
+      <circle cx="30" cy="432" r="4.5" fill="#ff3b5c"/><text x="42" y="436">likely</text>
+      <circle cx="110" cy="432" r="4.5" fill="#ffb347"/><text x="122" y="436">possible</text>
+      <circle cx="205" cy="432" r="4.5" fill="#3fb8af"/><text x="217" y="436">unlikely</text>
+    </g>
+  </g>
+
+  <!-- flagged list -->
+  <g transform="translate(600,108)">
+    <rect width="380" height="452" fill="#0e131c"/>
+    <line x1="0" y1="0" x2="0" y2="452" stroke="#1e2735"/>
+    <text x="18" y="30" font-size="11" letter-spacing="1.5" fill="#7c8699">FLAGGED FUNCTIONS</text>
+    <text x="362" y="30" text-anchor="end" font-size="11" fill="#7c8699">3</text>
+    <line x1="0" y1="44" x2="380" y2="44" stroke="#1e2735"/>
+
+    <g transform="translate(0,44)">
+      <rect x="18" y="16" width="34" height="20" rx="5" fill="#ff3b5c" opacity="0.16"/>
+      <text x="35" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#ff3b5c">61</text>
+      <text x="64" y="26" font-size="12" fill="#e8e6e1">main.parseRecord</text>
+      <text x="64" y="42" font-size="10" fill="#7c8699">adds an error/validation path (fmt.errorf) ·</text>
+      <text x="64" y="55" font-size="10" fill="#7c8699">grew by 160 bytes · 3 new calls</text>
+      <text x="348" y="26" text-anchor="end" font-size="9" fill="#5f6a7d">MODIFIED</text>
+      <line x1="0" y1="72" x2="380" y2="72" stroke="#1e2735" stroke-opacity="0.6"/>
+    </g>
+    <g transform="translate(0,120)">
+      <rect x="18" y="16" width="34" height="20" rx="5" fill="#ffb347" opacity="0.16"/>
+      <text x="35" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#ffb347">58</text>
+      <text x="64" y="26" font-size="12" fill="#e8e6e1">main.parseAll</text>
+      <text x="64" y="42" font-size="10" fill="#7c8699">adds an error/validation path (fmt.errorf) ·</text>
+      <text x="64" y="55" font-size="10" fill="#7c8699">grew by 144 bytes · 2 new calls</text>
+      <text x="348" y="26" text-anchor="end" font-size="9" fill="#5f6a7d">MODIFIED</text>
+      <line x1="0" y1="72" x2="380" y2="72" stroke="#1e2735" stroke-opacity="0.6"/>
+    </g>
+    <g transform="translate(0,196)">
+      <rect x="18" y="16" width="34" height="20" rx="5" fill="#ffb347" opacity="0.16"/>
+      <text x="35" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#ffb347">38</text>
+      <text x="64" y="26" font-size="12" fill="#e8e6e1">main.readHeader</text>
+      <text x="64" y="42" font-size="10" fill="#7c8699">new function; builds an error/</text>
+      <text x="64" y="55" font-size="10" fill="#7c8699">validation path (fmt.errorf)</text>
+      <text x="348" y="26" text-anchor="end" font-size="9" fill="#5f6a7d">ADDED</text>
+      <line x1="0" y1="72" x2="380" y2="72" stroke="#1e2735" stroke-opacity="0.6"/>
+    </g>
+  </g>
+</svg>
