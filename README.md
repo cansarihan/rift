@@ -6,7 +6,7 @@
 [![CI](https://github.com/cansarihan/rift/actions/workflows/ci.yml/badge.svg)](https://github.com/cansarihan/rift/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/cansarihan/rift/actions/workflows/codeql.yml/badge.svg)](https://github.com/cansarihan/rift/actions/workflows/codeql.yml)
 [![Go report card](https://goreportcard.com/badge/github.com/cansarihan/rift)](https://goreportcard.com/report/github.com/cansarihan/rift)
-[![Go 1.26](https://img.shields.io/badge/go-1.26-00ADD8.svg)](go.mod)
+[![Go 1.25](https://img.shields.io/badge/go-1.25-00ADD8.svg)](go.mod)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Rift compares two builds of the same program and finds the functions whose change
