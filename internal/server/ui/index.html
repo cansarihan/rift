@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rift</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <svg class="glyph" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">
+        <path d="M32 6 L26 24 L36 30 L24 40 L34 46 L28 58" fill="none" stroke="#ff3b5c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="26" cy="24" r="2.8" fill="#ffb347"/>
+        <circle cx="34" cy="46" r="2.8" fill="#3fb8af"/>
+      </svg>
+      <div class="titles">
+        <h1>rift</h1>
+        <p class="sub">patch-diff · silently shipped fixes</p>
+      </div>
+    </div>
+    <div class="builds" id="builds">
+      <span class="pair"><span class="tag old">old</span><span id="old-path">—</span></span>
+      <span class="pair"><span class="tag new">new</span><span id="new-path">—</span></span>
+      <span class="meta" id="meta">—</span>
+    </div>
+    <button id="rerun" class="rerun">re-run</button>
+  </header>
+
+  <section class="strip" id="strip">
+    <div class="band" id="band"><span class="dot"></span><span id="band-label">idle</span></div>
+    <div class="stat"><b id="s-compared">0</b><span>compared</span></div>
+    <div class="stat"><b id="s-modified">0</b><span>modified</span></div>
+    <div class="stat"><b id="s-added">0</b><span>added</span></div>
+    <div class="stat"><b id="s-removed">0</b><span>removed</span></div>
+    <div class="stat flag"><b id="s-flagged">0</b><span>flagged</span></div>
+    <div class="progress"><div class="fill" id="progress-fill"></div></div>
+  </section>
+
+  <main class="stage">
+    <div class="fault">
+      <canvas id="fault"></canvas>
+      <div class="legend">
+        <span><i class="likely"></i>likely</span>
+        <span><i class="possible"></i>possible</span>
+        <span><i class="unlikely"></i>unlikely</span>
+      </div>
+    </div>
+    <aside class="list">
+      <div class="list-head">
+        <span>flagged functions</span>
+        <span id="list-count">0</span>
+      </div>
+      <ol id="deltas"></ol>
+      <p class="empty" id="empty">Waiting for a comparison…</p>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
