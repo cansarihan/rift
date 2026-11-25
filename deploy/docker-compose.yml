@@ -1,0 +1,10 @@
+services:
+  rift:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: rift:demo
+    command: ["serve", "-listen", "0.0.0.0:8080", "-old", "/srv/sample-old", "-new", "/srv/sample-new"]
+    ports:
+      - "127.0.0.1:18150:8080"
+    restart: unless-stopped
